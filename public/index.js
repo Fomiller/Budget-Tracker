@@ -143,6 +143,26 @@ function sendTransaction(isAdding) {
     });
 }
 
+function deleteAll() {
+  fetch("/api/transaction", {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json"
+    }
+    })
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .catch(err => {
+      // fetch failed console.log err
+    console.log(err);
+  });
+}
+
+
+
 document.querySelector("#add-btn").onclick = function() {
   event.preventDefault()
   sendTransaction(true);
@@ -151,4 +171,8 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   event.preventDefault()
   sendTransaction(false);
+};
+
+document.querySelector("#del-btn").onclick = function() {
+  deleteAll()
 };

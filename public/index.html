@@ -20,16 +20,31 @@
       </div>
 
       <form>
-        <label for="t-name">Transaction Name:</label>
-        <input type="text" id="t-name" placeholder="Name" />
+        <div class="row">
+          <div class="col-md-6 my-2">
+            <div style="margin-bottom: 1em;">
+              <label for="t-name">Transaction Name:</label>
+              <input type="text" id="t-name" placeholder="Name" />
+            </div>
 
-        <label for="t-amount">Transaction Amount:</label>
-        <input type="number" min="0" id="t-amount" placeholder="Amount" />
+          </div>
+          <div class="col-md-6 my-2">
+            <div>
+              <label for="t-amount">Transaction Amount:</label>
+              <input type="number" min="0" id="t-amount" placeholder="Amount" />
+            </div>
+
+          </div>
+        </div>
+
 
         <div class="transaction-buttons">
           <button id="add-btn"><i class="fa fa-plus"></i> Add Funds</button>
           <button id="sub-btn">
             <i class="fa fa-minus"></i> Subtract Funds
+          </button>
+          <button id="del-btn">
+            <i class="fa fa-trash"></i> Clear Chart
           </button>
         </div>
         <p role="alert" class="error"></p>
